@@ -5,6 +5,9 @@ const formPensamento = document.getElementById('pensamento-form')
 document.addEventListener('DOMContentLoaded', () => {
     ui.renderizarPensamentos();
     formPensamento.addEventListener('submit', manipularSubmicaoForm);
+    const inputBusca = document.getElementById('campo_busca');
+
+    inputBusca.addEventListener('input', manipularBusca)
 })
 
 async function manipularSubmicaoForm(event) {
@@ -30,5 +33,15 @@ async function manipularSubmicaoForm(event) {
         alert('Erro ao salvar pensamentos')
     }
 
+}
+
+async function manipularBusca() {
+    const termoBusca = document.getElementById('campo_busca').value;
+    try {
+        const pensamentosFiltrados = await api.buscarPensamentoPorTermo(termoBusca);
+        ui.renderizarPensamentos(pensamentosFiltrados);
+    } catch (error) {
+        alert('erro ao realizar busca')
+    }
 }
 

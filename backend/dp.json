@@ -1,11 +1,18 @@
 {
   "pensamentos": [
     {
+      "id": "5b8a",
+      "conteudo": "Na minha máquina funciona!",
+      "autoria": "Dev"
+    },
+    {
+      "id": "68uy",
+      "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
+      "autoria": "Chaves"
+    },
+    {
       "id": "b807",
-      "pensamento": {
-        "conteudo": "Melhor professor, o fracasso é!",
-        "autoria": "Mestre Yoda"
-      },
+      "conteudo": "Melhor professor, o fracasso é!",
       "autoria": "Mestre Yoda"
     },
     {
@@ -32,6 +39,16 @@
       "id": "2d6e",
       "conteudo": "Não faça drama, faça café! :)",
       "autoria": "Dev"
+    },
+    {
+      "id": "3f1a",
+      "conteudo": "Conserta minha impressora?",
+      "autoria": "Grupo da família"
+    },
+    {
+      "id": "8b4c",
+      "conteudo": "A vingança nunca é plena... mata a alma e a envenena...",
+      "autoria": "Seu Madruga"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

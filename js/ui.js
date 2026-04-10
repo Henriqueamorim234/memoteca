@@ -13,15 +13,21 @@ const ui = {
         document.getElementById('pensamento-conteudo').value = pensamento.conteudo;
     },
 
-    async renderizarPensamentos(){
+    async renderizarPensamentos(pensamentosFiltrados = null){
+        listaPensamentos.innerHTML = '';
         try{
-            listaPensamentos.innerHTML = '';
-            const pensamentos = await api.buscarPensamento();
-            if (pensamentos.length === 0){
+            let pensamentosParaRenderizar
+
+            if (pensamentosFiltrados){
+                pensamentosParaRenderizar = pensamentosFiltrados;
+            } else {
+                pensamentosParaRenderizar = await api.buscarPensamento();
+            } 
+            if (pensamentosParaRenderizar.length === 0){
                 listaVazia.style.display = 'block'
             } else {
                 listaVazia.style.display = 'none'
-                pensamentos.forEach(ui.adicionarPensamentoNalista);
+                pensamentosParaRenderizar.forEach(ui.adicionarPensamentoNalista);
             }
         }
         catch (error){

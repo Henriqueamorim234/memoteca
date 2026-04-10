@@ -2,10 +2,11 @@ import api from './api.js';
 
 const listaPensamentos = document.getElementById('lista-pensamentos');
 const btnCancelarPensamento = document.getElementById('botao-cancelar');
+const listaVazia = document.getElementById('lista-vazia'); 
+
 const ui = {
 
     async preencherFormulario(pensamentoId){
-        debugger
         const pensamento = await api.buscarUmPensamento(pensamentoId);
         document.getElementById('pensamento-id').value = pensamento.id;
         document.getElementById('pensamento-autoria').value = pensamento.autoria;
@@ -16,7 +17,12 @@ const ui = {
         try{
             listaPensamentos.innerHTML = '';
             const pensamentos = await api.buscarPensamento();
-            pensamentos.forEach(ui.adicionarPensamentoNalista);
+            if (pensamentos.length === 0){
+                listaVazia.style.display = 'block'
+            } else {
+                listaVazia.style.display = 'none'
+                pensamentos.forEach(ui.adicionarPensamentoNalista);
+            }
         }
         catch (error){
             console.error(error)
@@ -90,3 +96,4 @@ function cancelarPensamento(){
 }
 
 export default ui;
+

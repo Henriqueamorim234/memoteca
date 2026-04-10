@@ -2,7 +2,10 @@
   "pensamentos": [
     {
       "id": "b807",
-      "conteudo": "Melhor professor, o fracasso é!",
+      "pensamento": {
+        "conteudo": "Melhor professor, o fracasso é!",
+        "autoria": "Mestre Yoda"
+      },
       "autoria": "Mestre Yoda"
     },
     {

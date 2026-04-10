@@ -198,7 +198,7 @@ h2, h3 {
 }
 
 #lista-pensamentos-container h3 {
-  margin: 40px 0;
+  margin: 40px 0 10px 0;
 }
 
 #lista-pensamentos {
@@ -281,4 +281,23 @@ span {
   height: 1px;
   background: #041832;
   margin: 96px 0 48px 0;
+}
+
+.lista-vazia{
+  display: none;
+  text-align: center;
+  color: var(--Azul-Dark);
+}
+
+.lista-vazia p {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 33px;
+  font-family: "Poppins", sans-serif;
+}
+
+.lista-vazia img {
+  max-width: 200px;
+  margin-top: 20px;
 }
